@@ -18,6 +18,7 @@ namespace Lab3.ViewModels
         [ValidTime]
         public string Time { get; set; }
         [Required]
+        [ValidTime]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public DateTime GetDateTime()

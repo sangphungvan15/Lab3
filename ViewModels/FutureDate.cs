@@ -12,7 +12,7 @@ namespace Lab3.ViewModels
         public override bool IsValid(object value)
         {
             DateTime dateTime;
-            var isValid = DateTime.TryParseExact(Convert.ToString(value), "dd/M/yyyy", CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None, out dateTime);
+            var isValid = DateTime.TryParseExact(Convert.ToString(value), "M/dd/yyyy", CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None, out dateTime);
             return (isValid && dateTime > DateTime.Now);
         }
     }
