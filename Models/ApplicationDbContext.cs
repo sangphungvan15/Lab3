@@ -12,6 +12,8 @@ namespace Lab3.Models
         public DbSet<Course> Course { get; set; }
         public DbSet<Category>  Categories  { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
+        public object AttenDances { get; internal set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
