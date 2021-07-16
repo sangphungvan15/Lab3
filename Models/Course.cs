@@ -19,6 +19,7 @@ namespace Lab3.Models
         public DateTime DateTime { get; set; }
         public Category Category { get; set; }
         public byte CategoryId { get; internal set; }
+        public bool IsCanceled { get; internal set; }
     }
    
 }

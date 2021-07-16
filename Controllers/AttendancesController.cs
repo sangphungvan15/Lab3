@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Lab3.DTOs;
 
 namespace Lab3.Controllers
 {
@@ -23,7 +24,7 @@ namespace Lab3.Controllers
         {
             var userId = User.Identity.GetUserId();
             if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
-                return BadRequest("The Attendance already exitst");
+                return BadRequest("The Attendance already exists!");
             var attendance = new Attendance
             {
                 CourseId = attendanceDto.CourseId,
@@ -31,7 +32,7 @@ namespace Lab3.Controllers
             };
             _dbContext.Attendances.Add(attendance);
             _dbContext.SaveChanges();
-            return Ok();
+            return Ok(); 
         }
     }
 }
